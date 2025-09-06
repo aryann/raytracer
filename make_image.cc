@@ -16,6 +16,8 @@ int main(int argc, char **argv) {
   std::cout << std::endl;
 
   for (int row = 0; row < kHeight; ++row) {
+    std::clog << "Lines remaining: " << kHeight - row << std::endl
+              << std::flush;
     for (int col = 0; col < kWidth; ++col) {
       int r = Quantize(double(row) / (kHeight - 1));
       int g = Quantize(double(col) / (kWidth - 1));
