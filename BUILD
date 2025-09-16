@@ -6,6 +6,8 @@ cc_binary(
     srcs = ["make_image.cc"],
     deps = [
         ":color",
+        ":point",
+        ":ray",
         ":vec3",
     ],
 )
@@ -15,6 +17,25 @@ cc_library(
     srcs = ["color.cc"],
     hdrs = ["color.h"],
     deps = [
+    ],
+)
+
+cc_library(
+    name = "point",
+    srcs = [],
+    hdrs = ["point.h"],
+    deps = [
+        ":vec3",
+    ],
+)
+
+cc_library(
+    name = "ray",
+    srcs = [],
+    hdrs = ["ray.h"],
+    deps = [
+        ":point",
+        ":vec3",
     ],
 )
 
