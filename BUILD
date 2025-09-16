@@ -5,7 +5,16 @@ cc_binary(
     name = "make_image",
     srcs = ["make_image.cc"],
     deps = [
+        ":color",
         ":vec3",
+    ],
+)
+
+cc_library(
+    name = "color",
+    srcs = ["color.cc"],
+    hdrs = ["color.h"],
+    deps = [
     ],
 )
 

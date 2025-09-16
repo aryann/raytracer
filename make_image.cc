@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string_view>
 
+#include "color.h"
+
 constexpr std::string_view kPPMHeader = "P3";
 
 constexpr int kWidth = 256;
@@ -23,7 +25,7 @@ int main(int argc, char **argv) {
       int g = Quantize(double(col) / (kWidth - 1));
       int b = 0;
 
-      std::cout << r << " " << g << " " << b << std::endl;
+      raytracer::write_color(std::cout, raytracer::Color(r, g, b));
     }
   }
 
